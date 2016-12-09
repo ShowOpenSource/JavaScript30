@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="loadings">
+    <div data-key="79" class="loading">
+      <kbd>O</kbd>      
+    </div>
+    <div data-key="72" class="loading">
+      <kbd>H</kbd>      
+    </div>
+    <div data-key="68" class="loading">
+      <kbd>D</kbd>      
+    </div>
+    <div data-key="79" class="loading">
+      <kbd>O</kbd>      
+    </div>
+    <div data-key="75" class="loading">
+      <kbd>K</kbd>      
+    </div>
+    <div data-key="73" class="loading">
+      <kbd>I</kbd>      
+    </div>
+    <div data-key="78" class="loading">
+      <kbd>N</kbd>      
+    </div>
+    <div data-key="71" class="loading">
+      <kbd>G</kbd>      
+    </div>
+  </div>
+
+<script>
+
+  // window.addEventListener('keydown', function(e){
+  //   const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+
+  //   if(!key) return;
+
+  //   key.classList.add("playing");
+  // });
+
+  const loadings = document.querySelectorAll(".loading")
+
+  const loading = document.querySelector(".loading")
+  
+
+  function continueEvent(e){
+    console.log("test")
+    if(e.propertyName !== "transform") return;
+      // e.removeEventListener('transitionend',
+      //     continueEvent,
+      //     false
+      // );
+
+      this.classList.remove("playing");
+      var next = this.nextElementSibling;
+      if(!next) return; 
+      
+      // next.classList.add("playing");
+      e.target.removeEventListener(e.type, arguments.callee);
+      
+      next.classList.add("playing");
+            
+      // console.log(next)
+  }
+
+  loadings.forEach(loading => loading.addEventListener('transitionend',continueEvent))
+  setTimeout(function(){
+    loading.classList.add("playing");
+  },1000)
+
+
+</script>
+
+
+</body>
+</html>
