@@ -8,7 +8,7 @@
 
 * transition
   CSS 속성을 변경할 때 애니메이션 속도를 조절하는 방법
-
+```
   transition-property
     CSS 속성의 이름 혹은 이름
   transition-duration
@@ -18,13 +18,13 @@
 
   transitionend
     트랜지션을 완료하면 발생하는 단일 이벤트
-
+```
   출처 : https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
 
 * transform
   transform은 요소 박스를 변형하는 속성.
   2차원, 3차원 변형이 가능하고, 변형 형태별로 함수 타입의 속성값을 지정.
-
+```
   * 2d transform
     translate()
       수평 이동
@@ -46,7 +46,7 @@
       3D 공간에서 요소와 관측 점과의 거리, 즉원근감을 자정하는 속성
     perspective-origin
       3D 공간상에서 원근감의 방향을 지정하는 속성
-
+```
   출처 : http://blog.singihae.com/css3-transform-or-transition-or-animaiton/
 
 
@@ -60,7 +60,7 @@
 * animation
   CSS3 애니메이션은 엘리먼트에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시킴.
   애니메이션은 애니메이션을 나타내는 CSS 스타일과 애니메이션의 중간 상태를 나타내는 키프레임들로 이루어짐.
-
+```
   animation-delay
     엘리먼트가 로드되고 나서 언제 애니메이션이 시작될지 지정.
   animation-direction
@@ -90,5 +90,5 @@
       끝(100%)
     <percentage>
       지점(%)
-
+```
   출처 : https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Animations/Using_CSS_animations
