@@ -56,3 +56,39 @@
   [DOM].style.[속성이름] 으로 스타일을 직접 변경가능하다.
 
   출처 : http://www.clearboth.org/48_dynamic_style_-_manipulating_css_with_javascript/
+
+* animation
+  CSS3 애니메이션은 엘리먼트에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시킴.
+  애니메이션은 애니메이션을 나타내는 CSS 스타일과 애니메이션의 중간 상태를 나타내는 키프레임들로 이루어짐.
+
+  animation-delay
+    엘리먼트가 로드되고 나서 언제 애니메이션이 시작될지 지정.
+  animation-direction
+    애니메이션이 종료되고 다시 처음부터 시작할지 역방향으로 진행할지 지정.
+  animation-duration
+    한 싸이클의 애니메이션이 얼마에 걸쳐 일어날지 지정.
+  animation-iteration-count
+    애니메이션이 몇 번 반복될지 지정.
+    infinite로 지정하여 무한히 반복 가능
+  animation-name
+    이 애니메이션의 중간 상태를 지정.
+    중간 상태는  @keyframes 규칙을 이용하여 기술.
+  animation-play-state
+    애니메이션을 멈추거나 다시 시작할 수 있음.
+  animation-timing-function
+    중간 상태들의 전환을 어떤 시간간격으로 진행할지 지정.
+  animation-fill-mode
+    애니메이션이 시작되기 전이나 끝나고 난 후 어떤 값이 적용될지 지정.
+
+  * @keyframe
+    at-rule(@) 개발자가 애니메이션 중간중간의 특정 지점들을 거칠 수 있는 키프레임들을 설정함으로써 CSS 애니메이션 과정의 중간 절차를 제어할 수 있게함.
+    <identifier>
+      keyframe 이름
+    from
+      시작(0%)
+    to
+      끝(100%)
+    <percentage>
+      지점(%)
+
+  출처 : https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Animations/Using_CSS_animations
