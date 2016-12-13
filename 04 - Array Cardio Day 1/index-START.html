@@ -28,27 +28,124 @@
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
 
+    /*
+      축약해서 적어봅시다.
+
+      1. arrow function
+      2. 3항 연산자 X -> 바로 리턴
+
+      const birthInFifteen =  inventors.filter(function(inventor){
+        if(inventor.year >= 1500 && inventor.year < 1600){
+          return true;
+        }
+      });
+
+    */
+    const birthInFifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
+
+    console.table(birthInFifteen);
+
     // Array.prototype.map()
     // 2. Give us an array of the inventory first and last names
+
+    const inventorFullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+
+    console.log(inventorFullName);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
+    /*
+    sort 안의 함수 의 동작 원리  
+    function compare(a, b) {
+      if (a 가 b 보다 작은 순서 지정 기준) {
+        return -1;
+      }
+      if (a가 b보다 큰 순서 지정 기준) {
+        return 1;
+      }
+      // a와 b 가 같은 경우
+      return 0;
+    }
+
+    const inventorSortByBirth = inventors.sort(function(a, b) {
+      if(a.year > b.year) {
+         return 1;
+      } else {
+         return -1;
+      }
+    });
+
+    //이렇게 하면 순차 정렬됨
+    const inventorSortByBirth = inventors.sort((a,b) => a.year-b.year);
+    */
+
+    const inventorSortByBirth = inventors.sort((a,b)=> a.year > b.year ? 1 : -1);
+
+    console.table(inventorSortByBirth);
+
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
+
+    //callback(이전값, 현재값, 현재 인덱스, 배열), 초기값 
+    const totalYears = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year),0);
+
+    console.log(totalYears);
+
 
     // 5. Sort the inventors by years lived
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+    // const allCityList = document.querySelectorAll('.mw-category li a');
+
+    // const allCityArray = Array.from(allCityList);
+
+    /*
+      아래와 같이 chaining 으로 가능 
+      const allCityArrayText = allCityArray.map(cityItem => cityItem.title);
+
+      const filterCityArrayText = allCityArrayText.filter(cityItem => cityItem.includes('de'))
+    */
+
+    // const filterCityArrayText = allCityArray.map(cityItem => cityItem.title).filter(cityItem => cityItem.includes('de'))
+
+    // console.log(filterCityArrayText)
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
+    const sortByName = people.map(name => {
+      const fullName = name.split(", ");
+      return fullName[0]
+    }).sort((a,b) => a > b ? 1 : -1);
+
+    console.log(sortByName)
+
+    const alpha = people.sort((lastOne, nextOne) => {
+      const [aLast, aFirst] = lastOne.split(', ');
+      const [bLast, bFirst] = nextOne.split(', ');
+      return aLast > bLast ? 1 : -1;
+    });
+    console.log(alpha);
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    const addData = data.reduce((obj, item) => {
+      if(!obj[item]){
+        obj[item] = 0;
+      }
+      obj[item] += 1;
+      return obj;
+    }, {})
+
+    console.log(addData)
+
+    const [name1, name2, ...name3] = [1,2,3,4,5,6];
+    console.log(name1, name2, name3)
 
   </script>
 </body>
