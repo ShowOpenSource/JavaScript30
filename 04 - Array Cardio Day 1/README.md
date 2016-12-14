@@ -36,7 +36,9 @@ Array의 새로운 함수들을 사용해본다.
     * from()
     	유사 배열 혹은 반복가능한 객체로부터 새 Array 인스턴스를 만듭니다.        
         출처 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from
-        
+    * join
+        array 요소들을 합쳐서 하나의 스트링으로 만들어준다.
+        참고 : http://www.w3schools.com/jsref/jsref_join.asp
         
 ### String
 	* includes()
