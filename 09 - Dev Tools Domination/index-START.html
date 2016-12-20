@@ -6,7 +6,7 @@
 </head>
 <body>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+  <p class="body" onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
@@ -19,25 +19,68 @@
 
     // Regular
 
+    console.log('hi')
+
     // Interpolated
 
+    console.log('hi~ i\'m %s dude','💩')
     // Styled
-
+    console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
     // warning!
-
-    // Error :|
-
+    console.warn("ohohdodh")
+    // Error :\
+    console.error("!!!eorror!!")
     // Info
-
+    console.info("just info~~")
     // Testing
+    //
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('body'), 'this is wrong')
+    console.assert(p.classList.contains('head'), 'this is wrong')
 
     // clearing
+    console.clear();
+
+    //debug
+    console.debug("debug??!!")
+    console.log("debug??!!")
 
     // Viewing DOM Elements
 
+    console.log(p);
+    console.dir(p);
+
     // Grouping together
 
+    console.group('status');
+    console.log("peekaboo, you can't see 1");
+    console.log("peekaboo, you can't see 2");
+    console.log("peekaboo, you can't see 3-4");
+    console.log("peekaboo, you can't see 4");
+    console.groupEnd();
+
+
+    console.groupCollapsed('status');
+    console.log("peekaboo, you can't see 6");
+    console.log("peekaboo, you can't see 5");
+    console.log("peekaboo, you can't see 7");
+    console.log("peekaboo, you can't see 8");
+    console.groupEnd();
+
     // counting
+
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
 
     // timing
 
