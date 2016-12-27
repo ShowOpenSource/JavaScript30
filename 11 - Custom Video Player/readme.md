@@ -7,6 +7,7 @@ Video 소스 코드를 분석하고 어떤 메서드가 있는지 알아봄
 ## 새로운 개념 및 이벤트
 
 ### Video
+  비디오를 사용 할 수 잇는 태그이다.
   play
   paused
   currentTime
@@ -14,8 +15,9 @@ Video 소스 코드를 분석하고 어떤 메서드가 있는지 알아봄
   playbackRate
   duration
 
+참고 : http://www.w3schools.com/TAGs/ref_av_dom.asp
 
-### PrgressBar
+### ProgressBar
   flexBasis
 
 
