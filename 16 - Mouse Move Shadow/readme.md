@@ -26,3 +26,9 @@ Object를 아래와 같은 형태로 바로 대입 가능
   //3, 4 출력됨 
   console.log(x,y)
 ```
+
+### Math
+
+javascript 수학 관련된 함수들 집합 
+
+참고 : http://www.w3schools.com/jsref/jsref_obj_math.asp
