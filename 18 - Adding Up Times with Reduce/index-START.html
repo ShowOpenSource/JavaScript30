@@ -182,6 +182,26 @@
     </li>
 
 <script>
+  const times = Array.from(document.querySelectorAll('[data-time]'));
+  console.log(document.querySelectorAll('[data-time]'), times)
+  function makeTime(sec){
+    const time = {}
+    time.hours = Math.floor(sec / 3600);
+    time.mins = Math.floor((sec % 3600) / 60);
+    time.secs = (sec % 3600) % 60;
+    return time;
+  }
+
+  const seconds = 
+    times
+      .map((node) => node.dataset.time)
+      .map((time) => {
+        const [min, sec] = time.split(':').map(parseFloat)
+        return (min * 60) + sec;      
+      })
+      .reduce((total, sec) => total + sec);
+
+  console.log(makeTime(seconds))
 </script>
 </body>
 </html>
